@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --gray-100: #c1c1c1;
+  --azul: #4f7cac;
+  --border-radius: 4px;
+  --fucsia: #ac4fa4;
+}
+
+.slider-control-centerright {
+  display: none;
+}
+.slider-control-centerleft {
+  display: none;
+}
