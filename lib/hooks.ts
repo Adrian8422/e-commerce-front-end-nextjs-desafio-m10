@@ -3,6 +3,9 @@ import { fetchAPI, getSavedToken } from "./api";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
+const BASE_URL_LOCAL_API =
+  "https://e-commerce-front-end-nextjs-desafio-m10.vercel.app";
+
 const fetcher = (a: any, b: any) => fetch(a, b).then((res) => res.json());
 
 const BASE_URL = "tatatatta";
@@ -69,7 +72,7 @@ export function useGetCurrentCart() {
 
 export function useGetProductsDestacados() {
   const { data } = useSWR(
-    "http://localhost:3000/api/products/destacados",
+    BASE_URL_LOCAL_API + "/api/products/destacados",
     fetcher
   );
   console.log("efsfsfds", data);
@@ -77,7 +80,7 @@ export function useGetProductsDestacados() {
 }
 export function useGetCategories() {
   const { data } = useSWR(
-    "http://localhost:3000/api/products/categories",
+    BASE_URL_LOCAL_API + "/api/products/categories",
     fetcher
   );
 
@@ -85,7 +88,7 @@ export function useGetCategories() {
 }
 export function useGetProductsFromCategorie(categorie: any) {
   const { data } = useSWR(
-    "http://localhost:3000/api/products/categories/" + categorie,
+    BASE_URL_LOCAL_API + "/api/products/categories/" + categorie,
     fetcher
   );
 
