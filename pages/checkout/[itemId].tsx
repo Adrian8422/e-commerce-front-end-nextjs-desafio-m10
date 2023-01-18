@@ -1,7 +1,6 @@
-import { CheckoutComp } from "components/checkout";
+import { CheckoutComp } from "components/checkout-page";
 import { Layout } from "components/layout";
 import { useRouter } from "next/router";
-import { ContainerPage } from "./styled";
 
 export default function CheckOutPage() {
   const router = useRouter();
@@ -9,9 +8,7 @@ export default function CheckOutPage() {
 
   return (
     <Layout>
-      <ContainerPage>
-        <CheckoutComp itemId={itemId} />
-      </ContainerPage>
+      <CheckoutComp itemId={itemId} />
     </Layout>
   );
 }

@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { ButtonGeneral } from "ui/button";
 import { Input, Label, TextField } from "ui/textfield";
 import { SubTitle, Tiny } from "ui/texts";
-import { FormUpdate } from "./styled";
+import { FormUpdate, ContainerPage } from "./styled";
 
 export function CheckoutComp({ itemId }: any) {
   const shippingData = useGetDataProfile();
@@ -32,23 +32,25 @@ export function CheckoutComp({ itemId }: any) {
   }
 
   return (
-    <FormUpdate event={handleUpdateData}>
-      <SubTitle>Confirma datos de envio</SubTitle>
+    <ContainerPage>
+      <FormUpdate event={handleUpdateData}>
+        <SubTitle>Confirma datos de envio</SubTitle>
 
-      <Tiny>{shippingData?.name}</Tiny>
-      <TextField
-        type="text"
-        label="Ingrése su teléfono"
-        name={"cellphone"}
-        defaultValue={shippingData?.cellphone}
-      />
-      <TextField
-        type="text"
-        label="Ingrése su dirección"
-        name={"address"}
-        defaultValue={shippingData?.address}
-      />
-      <ButtonGeneral>Confirmar</ButtonGeneral>
-    </FormUpdate>
+        <Tiny>{shippingData?.name}</Tiny>
+        <TextField
+          type="text"
+          label="Ingrése su teléfono"
+          name={"cellphone"}
+          defaultValue={shippingData?.cellphone}
+        />
+        <TextField
+          type="text"
+          label="Ingrése su dirección"
+          name={"address"}
+          defaultValue={shippingData?.address}
+        />
+        <ButtonGeneral>Confirmar</ButtonGeneral>
+      </FormUpdate>
+    </ContainerPage>
   );
 }

@@ -39,3 +39,17 @@ export const ContainerTitleDescription = styled.div`
   box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
   padding: 14px;
 `;
+
+export const ContainerPage = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 750px;
+  align-items: center;
+  justify-content: space-around;
+  @media (min-width: 650px) {
+    flex-direction: column;
+    height: 500px;
+    padding: 25px;
+    width: 100%;
+  }
+`;

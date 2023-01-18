@@ -11,6 +11,7 @@ import {
   ContainerImage,
   Image,
   ContainerTitleDescription,
+  ContainerPage,
 } from "./styled";
 import {
   Large,
@@ -99,38 +100,40 @@ export function ItemProduct(itemId: any) {
   };
 
   return (
-    <ContainerFull style={{ display: "flex" }}>
-      <ContainerImage style={{ width: "300px", height: "300px" }}>
-        <Image src={imageItem?.url} alt="foto de tv" />
-      </ContainerImage>
-      <ContainerTitleDescription
-        style={{ display: "flex", flexDirection: "column" }}
-      >
-        <LargeTitleItem>
-          {dataItem?.title || <Skeleton count={1} />}
-        </LargeTitleItem>
-
-        <LargePriceItem>{"$" + dataItem?.price}</LargePriceItem>
-        <Tiny>{"Stock: " + dataItem?.stock}</Tiny>
-        <select
-          style={{ cursor: "pointer" }}
-          name="value"
-          onChange={handleSetQuantity}
+    <ContainerPage>
+      <ContainerFull style={{ display: "flex" }}>
+        <ContainerImage style={{ width: "300px", height: "300px" }}>
+          <Image src={imageItem?.url} alt="foto de tv" />
+        </ContainerImage>
+        <ContainerTitleDescription
+          style={{ display: "flex", flexDirection: "column" }}
         >
-          <option value="1">1 unidad</option>
-          <option value="2">2 unidades</option>
-          <option value="3">3 unidades</option>
-          <option value="4">4 unidades</option>
-          <option value="5">5 unidades</option>
-        </select>
-        <Tiny>{"Categoría: " + dataItem?.categories}</Tiny>
+          <LargeTitleItem>
+            {dataItem?.title || <Skeleton count={1} />}
+          </LargeTitleItem>
 
-        <SubTitleItem>Caracteristicas y descripcion</SubTitleItem>
-        <Tiny style={{ maxWidth: "300px" }}>{dataItem?.description}</Tiny>
+          <LargePriceItem>{"$" + dataItem?.price}</LargePriceItem>
+          <Tiny>{"Stock: " + dataItem?.stock}</Tiny>
+          <select
+            style={{ cursor: "pointer" }}
+            name="value"
+            onChange={handleSetQuantity}
+          >
+            <option value="1">1 unidad</option>
+            <option value="2">2 unidades</option>
+            <option value="3">3 unidades</option>
+            <option value="4">4 unidades</option>
+            <option value="5">5 unidades</option>
+          </select>
+          <Tiny>{"Categoría: " + dataItem?.categories}</Tiny>
 
-        <ButtonGeneral onClick={handlePay}>Pay now</ButtonGeneral>
-        <ButtonAddCart onClick={handleAddCart}>add cart</ButtonAddCart>
-      </ContainerTitleDescription>
-    </ContainerFull>
+          <SubTitleItem>Caracteristicas y descripcion</SubTitleItem>
+          <Tiny style={{ maxWidth: "300px" }}>{dataItem?.description}</Tiny>
+
+          <ButtonGeneral onClick={handlePay}>Pay now</ButtonGeneral>
+          <ButtonAddCart onClick={handleAddCart}>add cart</ButtonAddCart>
+        </ContainerTitleDescription>
+      </ContainerFull>
+    </ContainerPage>
   );
 }

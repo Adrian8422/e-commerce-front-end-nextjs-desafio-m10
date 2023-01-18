@@ -12,7 +12,7 @@ import {
   ContainerButton,
 } from "./styled";
 import { ButtonGeneral } from "ui/button";
-import { FormUpdate } from "components/checkout/styled";
+import { FormUpdate } from "components/checkout-page/styled";
 import { SubTitle, Tiny } from "ui/texts";
 import { TextField } from "ui/textfield";
 import { useState } from "react";
