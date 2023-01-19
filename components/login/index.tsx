@@ -2,7 +2,7 @@ import { authToken, sendCode } from "lib/api";
 import { useState } from "react";
 import { TextField } from "ui/textfield";
 import { Large, Tiny } from "ui/texts";
-import { FormLog } from "./styled";
+import { FormLog, ContainerForms, LabelForm } from "./styled";
 import { useRouter } from "next/router";
 import { useGetValuePreviousPage } from "lib/atoms";
 
@@ -35,9 +35,9 @@ export function LoginComp() {
   };
 
   return (
-    <div>
+    <ContainerForms>
       <FormLog style={emailFormStyle} onSubmit={handleEmailForm}>
-        <label>
+        <LabelForm>
           <Large>Iniciar sesión</Large>
           <Tiny>Para comenzar ingrese su email</Tiny>
           <TextField
@@ -47,10 +47,10 @@ export function LoginComp() {
             placeholder="Ingrese su Email"
           />
           <button>enviar</button>
-        </label>
+        </LabelForm>
       </FormLog>
       <FormLog style={codeFormStyle} onSubmit={handleCodeForm}>
-        <label>
+        <LabelForm>
           <Large>Iniciar sesión</Large>
           <Tiny>Ingrese código enviado a su email</Tiny>
           <TextField
@@ -60,9 +60,9 @@ export function LoginComp() {
             placeholder="Ingrese su código"
           />
           <button>enviar</button>
-        </label>
+        </LabelForm>
       </FormLog>
-    </div>
+    </ContainerForms>
   );
 }
 

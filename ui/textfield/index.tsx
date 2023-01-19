@@ -4,7 +4,7 @@ import { Tiny } from "ui/texts";
 
 export const Input = styled.input`
   font-size: 15px;
-  width: 300px;
+  width: 100%;
   height: 30px;
   border-radius: var(--border-radius);
   border: transparent;
@@ -21,6 +21,7 @@ export const Label = styled(Tiny)`
   flex-direction: column;
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
 `;
 

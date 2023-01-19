@@ -32,6 +32,8 @@ export const Image = styled.img`
 
 export const ContainerTitleDescription = styled.div`
   display: flex;
+  height: 412px;
+  justify-content: space-evenly;
   flex-direction: column;
   max-width: 340px;
   text-align: initial;

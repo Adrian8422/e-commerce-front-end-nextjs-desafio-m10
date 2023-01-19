@@ -11,7 +11,7 @@ export function FooterComponent() {
   const stateUser = useCurrentUserState();
   const handleLogOut = () => {
     localStorage.removeItem("auth_token");
-    router.push(currentPage);
+    router.push("/signin");
     alert("te deslogueaste");
   };
   const handleSignIn = () => {

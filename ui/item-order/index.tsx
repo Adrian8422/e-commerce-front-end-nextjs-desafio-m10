@@ -21,10 +21,12 @@ export function UiItemOrder({
   return (
     <ContainerUIOrder key={key}>
       <ContainerTitles style={{ display: "flex", flexDirection: "column" }}>
-        <h2>{title || title.map((title: any) => title)}</h2>
+        <h2>
+          {JSON.stringify(title).replace(/[",/]/g, "-") ||
+            title.map((title: any) => <div>{title.replace(/,/g, "-")}</div>)}
+        </h2>
 
         <h3>{"Estado: " + status}</h3>
-        {/* <a style={enableOrDisableURL}>{"Url orden: " + url}</a> */}
 
         <a style={enableOrDisableURL} href={url}>
           Link de pago
@@ -35,7 +37,9 @@ export function UiItemOrder({
       >
         <h3>
           {"cantidad:" +
-            aditional_info.quantity.map((item: any) => item.quantity)}
+            aditional_info.quantity.map(
+              (item: any) => " " + item.quantity + " "
+            )}
         </h3>
         <h3>
           {"Fecha:" +

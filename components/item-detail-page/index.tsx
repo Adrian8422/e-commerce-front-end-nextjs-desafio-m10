@@ -57,6 +57,15 @@ export function ItemProduct(itemId: any) {
   }
   const handleAddCart = async () => {
     const { itemId } = router.query;
+    if (stateUser == false) {
+      Swal.fire({
+        title: "debes loguearte para poder comprar",
+        icon: "error",
+        confirmButtonText: "Loguearme",
+      });
+      router.push("/signin");
+    }
+
     ///// Chequeo si ya agregamos ese producto al carrito, si lo esta solamente modificamos el quantity que elegimos para que no se duplique el item en el carro
     const repeatProduct = currentCart?.find((prod: any) => {
       if (prod.data.productId == itemId) {

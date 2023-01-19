@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerPage = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  height: 400px; */
+  height: 391px;
 `;
 
 export const ContainerItems = styled.div`

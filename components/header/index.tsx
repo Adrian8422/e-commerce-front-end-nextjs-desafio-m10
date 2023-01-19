@@ -51,8 +51,9 @@ export function Header() {
     e.preventDefault();
     const query = e.target.search.value;
     router.query.q = query;
-    console.log("pasa por aca llevandose la query");
-    router.push("/search?q=" + query + "&offset=0" + "&limit=10");
+    const querySearch = query ? query : "q";
+
+    router.push("/search?q=" + querySearch + "&offset=0" + "&limit=10");
   };
 
   const handleProfile = () => {
@@ -116,7 +117,10 @@ export function Header() {
           <div style={nameAccount}>{userData?.name}</div>
         </div>
 
-        <CartQuantity quantity={currentCart?.length} event={handleCart}>
+        <CartQuantity
+          quantity={userState == true ? currentCart?.length : "0"}
+          event={handleCart}
+        >
           Carrito
         </CartQuantity>
       </ContainerItems>

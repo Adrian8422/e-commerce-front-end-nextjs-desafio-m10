@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  font-size: 38px;
+  font-size: 25px;
   margin: 0;
   color: var(--azul);
 `;
@@ -30,18 +30,18 @@ export const Large = styled.h3`
 `;
 
 export const LargePrice = styled(Large)`
-  font-size: 24px;
+  font-size: 20px;
 `;
 
 //// ui items DETAIL
 
 export const LargePriceItem = styled(Large)`
-  font-size: 40px;
   color: #000000ab;
+  font-size: 36px;
 `;
 
 export const LargeTitleItem = styled(Title)`
-  font-size: 48px;
+  font-size: 22px;
   color: #000000ab;
   font-weight: 400;
 `;
