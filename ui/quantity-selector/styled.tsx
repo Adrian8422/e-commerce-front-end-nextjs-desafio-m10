@@ -15,4 +15,5 @@ export const ButtonOperatorQuantity = styled.button`
   background-color: transparent;
   border: transparent;
   color: #8d919dc9;
+  cursor: pointer;
 `;

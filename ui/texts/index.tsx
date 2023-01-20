@@ -24,7 +24,7 @@ export const SubTitle = styled(Title).attrs({
 export const Large = styled.h3`
   margin: 0;
   font-size: 20px;
-  color: var(--gray-100);
+  color: #363434
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif;
 `;

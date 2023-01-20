@@ -5,6 +5,7 @@ import {
   ContainerFullCard,
   ContainerCardDestacados,
   ContainerImage,
+  ContainerTitles,
 } from "./styled";
 
 export function Card({ title, price, color, image, event, id }: any) {
@@ -19,20 +20,10 @@ export function Card({ title, price, color, image, event, id }: any) {
           src={image?.url}
         />
       </ContainerCardImage>
-      <div
-        id={id}
-        style={{
-          justifyContent: "space-evenly",
-          display: "flex",
-          flexDirection: "column",
-          width: "230px",
-          textAlign: "center",
-          margin: "o auto",
-        }}
-      >
+      <ContainerTitles id={id}>
         <Large id={id}>{title}</Large>
         <LargePrice id={id}>{"$" + price}</LargePrice>
-      </div>
+      </ContainerTitles>
     </ContainerFullCard>
   );
 }

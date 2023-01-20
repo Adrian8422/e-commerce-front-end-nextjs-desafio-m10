@@ -10,9 +10,9 @@ export const FormLog = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: aquamarine;
+  background-color: #1c5f49c4;
   border-radius: 6px;
-  box-shadow: grey 1px 1px 9px 3px;
+  box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
   max-width: 474px;
   width: 100%;
 `;
@@ -33,4 +33,5 @@ export const LabelForm = styled.label`
   width: 100%;
   height: 254px;
   justify-content: space-around;
+  padding: 20px;
 `;

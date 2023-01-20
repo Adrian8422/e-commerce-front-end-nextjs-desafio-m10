@@ -5,6 +5,7 @@ import { Large, Tiny } from "ui/texts";
 import { FormLog, ContainerForms, LabelForm } from "./styled";
 import { useRouter } from "next/router";
 import { useGetValuePreviousPage } from "lib/atoms";
+import { ButtonGeneral } from "ui/button";
 
 export function LoginComp() {
   const router = useRouter();
@@ -46,7 +47,7 @@ export function LoginComp() {
             name="email"
             placeholder="Ingrese su Email"
           />
-          <button>enviar</button>
+          <ButtonGeneral>enviar</ButtonGeneral>
         </LabelForm>
       </FormLog>
       <FormLog style={codeFormStyle} onSubmit={handleCodeForm}>
@@ -59,7 +60,7 @@ export function LoginComp() {
             name="code"
             placeholder="Ingrese su código"
           />
-          <button>enviar</button>
+          <ButtonGeneral>enviar</ButtonGeneral>
         </LabelForm>
       </FormLog>
     </ContainerForms>

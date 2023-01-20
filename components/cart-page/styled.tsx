@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
-export const ContainerPage = styled.div`
-  height: 391px;
-`;
+export const ContainerPage = styled.div``;
 
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 755px;
   margin: 0 auto;
-  box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
 `;
 export const ClearAll = styled.a`
+  padding: 22px 0;
   color: #343450;
 `;
 

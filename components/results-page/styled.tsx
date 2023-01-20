@@ -6,6 +6,7 @@ export const ContainerCards = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: 56px;
   @media (min-width: 484px) {
     display: flex;
     flex-direction: column;

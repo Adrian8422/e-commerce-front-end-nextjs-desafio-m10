@@ -6,7 +6,7 @@ export const ContainerPage = styled.div`
   justify-content: center;
   height: 650px;
   justify-content: space-around;
-  background-color: rgb(0 0 0 / 32%);
+
   text-align: center;
   align-items: center;
 `;
