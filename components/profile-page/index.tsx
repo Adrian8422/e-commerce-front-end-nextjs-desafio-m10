@@ -5,10 +5,7 @@ import { ContainerPage } from "./styled";
 
 export function ProfilePage() {
   const router = useRouter();
-  // const [page, setPage] = useSetPreviousPage();
-  // useEffect(() => {
-  //   setPage("/profile");
-  // }, []);
+
   useSetPreviousPage("/profile");
 
   const handleMyOrders = (e: any) => {

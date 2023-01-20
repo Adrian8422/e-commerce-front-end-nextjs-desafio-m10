@@ -1,23 +1,39 @@
 import { useGetValuePreviousPage } from "lib/atoms";
 import { useCurrentUserState } from "lib/hooks";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 import { Email, Instagram, Twitter } from "ui/icons";
-import { SubTitleItem, TextFooter } from "ui/texts";
+import { TextFooter } from "ui/texts";
 import { ContainerFull, ContainerRedes } from "./styled";
 
 export function FooterComponent() {
   const router = useRouter();
-  const currentPage = useGetValuePreviousPage();
+
   const stateUser = useCurrentUserState();
   const handleLogOut = () => {
-    localStorage.removeItem("auth_token");
-    router.push("/signin");
-    alert("te deslogueaste");
+    if (stateUser == false) {
+      Swal.fire({
+        title: "Ya estas deslogueado",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } else if (stateUser == true) {
+      localStorage.removeItem("auth_token");
+      router.push("/signin");
+      Swal.fire({
+        title: "Te deslogueaste",
+        icon: "success",
+        confirmButtonText: "Ok",
+      });
+    }
   };
   const handleSignIn = () => {
     if (stateUser == true) {
-      //   router.push("/");
-      alert("ya estas logueado");
+      Swal.fire({
+        title: "Ya estas logueado",
+        icon: "success",
+        confirmButtonText: "Seguir navegando",
+      });
     } else {
       router.push("/signin");
     }

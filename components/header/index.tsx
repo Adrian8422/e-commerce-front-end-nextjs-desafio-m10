@@ -3,12 +3,11 @@ import {
   useGetCategories,
   useGetCurrentCart,
   useGetDataProfile,
-  useGetProductsFromCategorie,
 } from "lib/hooks";
 import { useRouter } from "next/router";
 import { ButtonGeneral } from "ui/button";
 import { Ecommerce } from "ui/icons";
-import { Cart, Search, CartQuantity } from "ui/icons";
+import { CartQuantity } from "ui/icons";
 import { FormSearchQuery } from "ui/textfield";
 import { CategoriesUi } from "ui/categories";
 import { useState } from "react";
@@ -22,25 +21,14 @@ import {
 } from "./styled";
 
 export function Header() {
-  // const foundCategorie = useGetProductsFromCategorie();
   const router = useRouter();
   const location = useRouter();
   const categories = useGetCategories();
-  // const token = getSavedToken();
   const userData = useGetDataProfile();
   const userState = useCurrentUserState();
   const currentCart = useGetCurrentCart();
   const [actOrDisableCategorie, setActOrDisableCategorie] = useState(false);
 
-  //// cree un hook que realiza esto :DDD
-  // const [stateUser, setStateUser] = useState(false);
-  // useEffect(() => {
-  //   if (token) {
-  //     setStateUser(true);
-  //   } else {
-  //     setStateUser(false);
-  //   }
-  // }, [token]);
   const goToHome = () => {
     router.push("/");
   };
@@ -138,5 +126,3 @@ export function Header() {
     </HeaderComponent>
   );
 }
-
-///// VER SI TODOS ESOS CAMBIOS LOS PUEDO HACER CON CSS-- LO QUE APARECE O NO APARECE EL NOMBRE DEL USUARIO O SI DICE MI CUENTA Y DEMAS

@@ -1,13 +1,9 @@
-import {
-  payMerchantOrder,
-  updateCheckoutShippingData,
-  updateDataProfile,
-} from "lib/api";
+import { payMerchantOrder, updateCheckoutShippingData } from "lib/api";
 import { useGetValueQuantity } from "lib/atoms";
 import { useGetDataProfile } from "lib/hooks";
 import { useRouter } from "next/router";
 import { ButtonGeneral } from "ui/button";
-import { Input, Label, TextField } from "ui/textfield";
+import { TextField } from "ui/textfield";
 import { SubTitle, Tiny } from "ui/texts";
 import { FormUpdate, ContainerPage } from "./styled";
 

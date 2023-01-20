@@ -8,15 +8,10 @@ const BASE_URL_LOCAL_API =
 
 const fetcher = (a: any, b: any) => fetch(a, b).then((res) => res.json());
 
-const BASE_URL = "tatatatta";
-
 export function useSearchResults(query: string) {
   const { data } = useSWR(() => "/search?q=" + query, fetchAPI);
   return data;
 }
-
-///ATOMOS COMO RECOIL LO PUEDO UTILIZAR PERO IGUALMENTE SWR YA TRAE LA CONFIG PARA CACHEAR RESPUESTAS Y DATA ASI QUE SERIA COMO TENER TAMBIEN ATOMOS DENTRO DE SWR-- UTILIZO DIRECTAMENTE EL HOOK Y LISTO
-//  EJEMPLO DE HOOK ATOM SIN QUE FETCHEEÉ
 
 export function useGetDataProfile() {
   const { data } = useSWR("/users/me", fetchAPI, { refreshInterval: 1000 });
@@ -67,8 +62,6 @@ export function useGetCurrentCart() {
   }
   return data;
 }
-
-////cuando realize el deply tengo que poner la url en la funcion proxima que utiliza endpoint del front
 
 export function useGetProductsDestacados() {
   const { data } = useSWR(

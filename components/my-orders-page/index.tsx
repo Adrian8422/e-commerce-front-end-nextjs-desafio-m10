@@ -4,7 +4,7 @@ import { ContainerPage, ContainerItems } from "./styled";
 
 export function MyOrdersComp() {
   const myOrders = useDataOrders();
-  console.log({ myOrders });
+
   return (
     <ContainerPage>
       <ContainerItems>

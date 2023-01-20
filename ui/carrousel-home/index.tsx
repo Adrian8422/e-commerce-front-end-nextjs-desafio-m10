@@ -26,7 +26,6 @@ export function CarrouselHome() {
       {pics?.map((item: any) => (
         <div key={item.sys.id} style={{}}>
           <img
-            // style={{ objectFit: "cover", overflow: "hidden" }}
             style={{ width: "100%", height: "100%" }}
             src={"https:" + item["fields"]["file"]["url"]}
           />

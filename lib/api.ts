@@ -1,6 +1,5 @@
 const BASE_URL = "https://e-commerce-backend-desafio-m9.vercel.app/api";
 export async function fetchAPI(input: RequestInfo, options: any | undefined) {
-  //   const token = localStorage.getItem("token");
   const url = BASE_URL + input;
   const token = getSavedToken();
   const newOptions: any = options || {};
@@ -111,13 +110,18 @@ export async function updateCheckoutShippingData({
 }
 
 export async function addProductInCart(idProduct: string, quantity: string) {
-  console.log("en api add prod cart", { idProduct, quantity });
+  console.log(
+    "Asi llegan los parametros id quantity a ver",
+    idProduct,
+    quantity
+  );
   const data = await fetchAPI("/users/cart?id=" + idProduct, {
     method: "POST",
     body: {
       quantity: parseInt(quantity),
     },
   });
+  console.log("asi llegan data que retorna", data);
 
   return data;
 }

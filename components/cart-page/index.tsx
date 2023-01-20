@@ -17,6 +17,7 @@ import { SubTitle, Tiny } from "ui/texts";
 import { TextField } from "ui/textfield";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 export function CartComp() {
   const router = useRouter();
@@ -47,9 +48,13 @@ export function CartComp() {
         : "none",
   };
   const handleDeleteCart = async () => {
-    // productsInCart?.map((prod: any) => {
-    //   console.log("productos,busco url", prod);
-    // });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Vaciaste el carrito",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     await deleteAllProductsCart();
   };
   const handleGoCheckout = () => {
@@ -62,14 +67,12 @@ export function CartComp() {
     const cellphone = e.target.cellphone.value;
     const name = shippingData?.name;
 
-    console.log({ address, cellphone });
     await updateCheckoutShippingData({ name, cellphone, address });
 
     const data = await payMerchantOrderFromCart();
     const urlGetaway = data.url;
 
     router.push(urlGetaway);
-    // productsInCart?.map((prod: any) => console.log(prod.data.images.url));
   };
 
   return (

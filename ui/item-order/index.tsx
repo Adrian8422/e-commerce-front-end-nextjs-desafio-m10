@@ -17,7 +17,7 @@ export function UiItemOrder({
     fontSize: "12px",
     color: "blue",
   };
-  console.log({ date });
+
   return (
     <ContainerUIOrder key={key}>
       <ContainerTitles style={{ display: "flex", flexDirection: "column" }}>
@@ -53,5 +53,3 @@ export function UiItemOrder({
     </ContainerUIOrder>
   );
 }
-
-// new Date(createdAt._seconds * 1000);

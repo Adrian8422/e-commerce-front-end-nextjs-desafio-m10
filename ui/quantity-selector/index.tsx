@@ -2,7 +2,7 @@ import { ContainerQuantity, ButtonOperatorQuantity } from "./styled";
 
 export function SelectorQuantity({ eventMore, eventLess, quantity, id }: any) {
   return (
-    <ContainerQuantity style={{ padding: "4px" }}>
+    <ContainerQuantity>
       <ButtonOperatorQuantity id={id} onClick={eventLess}>
         -
       </ButtonOperatorQuantity>

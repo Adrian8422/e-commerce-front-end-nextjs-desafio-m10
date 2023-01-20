@@ -1,6 +1,5 @@
 import { changeQuantityOneProduct, removeIdProductCart } from "lib/api";
 import { useGetCurrentCart } from "lib/hooks";
-import Router from "next/router";
 import Swal from "sweetalert2";
 import { Trash } from "ui/icons";
 import { SelectorQuantity } from "ui/quantity-selector";
@@ -24,27 +23,25 @@ export function ItemCart({
 
   const eventLess = async (e: any) => {
     const productSelected = e.target.id;
-    console.log({ productSelected });
+
     const matchIdProds: any = productsInCart.find(
       (prod: any) => prod.data.productId == productSelected
     );
     const quantity = matchIdProds.data.quantity;
     const newQuantity = quantity - 1;
     const limitNewQuantity = JSON.stringify(newQuantity == 0 ? 1 : newQuantity);
-    // console.log({ newQuantity });
 
     await changeQuantityOneProduct(productSelected, limitNewQuantity);
   };
 
   const eventMore = async (e: any) => {
     const productSelected = e.target.id;
-    console.log({ productSelected });
+
     const matchIdProds: any = productsInCart.find(
       (prod: any) => prod.data.productId == productSelected
     );
     const quantity = matchIdProds.data.quantity;
     const newQuantity = JSON.stringify(quantity + 1);
-    // console.log({ newQuantity });
     const changeQuantity = await changeQuantityOneProduct(
       productSelected,
       newQuantity
@@ -60,6 +57,13 @@ export function ItemCart({
   const removeProduct = async (e: any) => {
     const productSelected = e.target.id;
     await removeIdProductCart(productSelected);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Eliminaste un producto",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   return (

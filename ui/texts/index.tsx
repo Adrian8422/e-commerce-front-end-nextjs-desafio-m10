@@ -51,7 +51,7 @@ export const SubTitleItem = styled(SubTitle)`
 `;
 export const TextFooter = styled.h3`
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
 `;
 // export function H2(props: any) {

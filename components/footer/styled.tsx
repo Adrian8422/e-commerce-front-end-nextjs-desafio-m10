@@ -22,5 +22,8 @@ export const ContainerRedes = styled.div`
   justify-content: space-evenly;
   width: 75px;
   text-align: unset;
-  align-items: flex-end;
+  align-items: flex-start;
+  @media (min-width: 600px) {
+    align-items: flex-end;
+  }
 `;

@@ -1,8 +1,3 @@
-import {
-  addProductInCart,
-  changeQuantityOneProduct,
-  payMerchantOrder,
-} from "lib/api";
 import { useCurrentUserState, useGetCurrentCart, useGetItem } from "lib/hooks";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
@@ -13,16 +8,10 @@ import {
   ContainerTitleDescription,
   ContainerPage,
 } from "./styled";
-import {
-  Large,
-  LargeTitleItem,
-  Tiny,
-  LargePriceItem,
-  SubTitleItem,
-} from "ui/texts";
+import { LargeTitleItem, Tiny, LargePriceItem, SubTitleItem } from "ui/texts";
 import { ButtonAddCart, ButtonGeneral } from "ui/button";
 import { useState } from "react";
-import { useGetValuePreviousPage, useSetValueQuantity } from "lib/atoms";
+import { useSetValueQuantity } from "lib/atoms";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { checkPreviousCartForAddProduct, checkStockProd } from "lib/functions";
@@ -74,47 +63,6 @@ export function ItemProduct(itemId: any) {
     if (currentCart) {
       await checkPreviousCartForAddProduct({ currentCart, itemId, quantity });
     }
-
-    ///// Chequeo si ya agregamos ese producto al carrito, si lo esta solamente modificamos el quantity que elegimos para que no se duplique el item en el carro
-    // const repeatProduct = currentCart?.find((prod: any) => {
-    //   if (prod.data.productId == itemId) {
-    //     return {
-    //       prodExistente: true,
-    //       cuurentQuantity: prod?.data.quantity,
-    //     };
-    //   }
-    // });
-
-    // if (repeatProduct) {
-    //   await changeQuantityOneProduct(
-    //     itemId as string,
-    //     repeatProduct.data.quantity + parseInt(quantity)
-    //   );
-    //   console.log({ repeatProduct });
-    // } else if (!repeatProduct) {
-    //   const addProduct = await addProductInCart(itemId as string, quantity);
-    //   if (addProduct.out_of_stock_error === true) {
-    //     Swal.fire({
-    //       title: "Producto agotado",
-    //       icon: "error",
-    //       confirmButtonText: "Volver a seleccionar",
-    //     });
-    //   }
-    //   if (addProduct.low_stock_error == true) {
-    //     Swal.fire({
-    //       title: "No contamos con esa cantidad de productos",
-    //       icon: "error",
-    //       confirmButtonText: "Volver a seleccionar",
-    //     });
-    //   }
-    //   if (addProduct.error == false) {
-    //     Swal.fire({
-    //       title: "Producto agregado al carrido",
-    //       icon: "success",
-    //       confirmButtonText: "Continuar",
-    //     });
-    //   }
-    // }
   };
 
   return (

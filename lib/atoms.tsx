@@ -8,8 +8,6 @@ const previousPage = atom({
   default: "",
 });
 
-// export const useSetPreviousPage = () => useRecoilState(previousPage);
-
 export function useSetPreviousPage(pages: string) {
   const [page, setPage] = useRecoilState(previousPage);
   useEffect(() => {
