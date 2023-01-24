@@ -18,7 +18,6 @@ export function CheckoutComp({ itemId }: any) {
     const cellphone = e.target.cellphone.value;
     const name = shippingData?.name;
 
-    console.log({ address, cellphone });
     await updateCheckoutShippingData({ name, cellphone, address });
 
     const data = await payMerchantOrder(itemId as string, quantity);

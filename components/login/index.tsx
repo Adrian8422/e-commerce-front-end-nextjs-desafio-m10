@@ -14,9 +14,9 @@ export function LoginComp() {
   const handleEmailForm = async (e: any) => {
     e.preventDefault();
     const email = e.target.email.value;
-    console.log(email);
+
     setEmail(email);
-    console.log("data del router", router);
+    console.log({ router });
     await sendCode(email);
   };
 
@@ -30,7 +30,7 @@ export function LoginComp() {
   const handleCodeForm = async (e: any) => {
     e.preventDefault();
     const code = e.target.code.value;
-    console.log(code);
+
     await authToken(email, code);
     router.push(previousPage || "/");
   };

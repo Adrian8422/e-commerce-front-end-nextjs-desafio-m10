@@ -45,7 +45,6 @@ export function ItemProduct(itemId: any) {
   };
 
   function handleSetQuantity(event: any) {
-    console.log("en el componente item no ui", event.target.value);
     const quantitySelected: any = event.target.value;
     setQuantity(quantitySelected || "1");
     setQuantityRecoil(quantitySelected || "1");

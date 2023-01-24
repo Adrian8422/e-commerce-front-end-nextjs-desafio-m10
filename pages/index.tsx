@@ -9,15 +9,9 @@ import { useRouter } from "next/router";
 import { Layout } from "components/layout";
 import { HomePage } from "components/home-page";
 
-function handleSubmit(e: any) {
-  e.preventDefault();
-  console.log(e.target.name.value);
-}
-
 const Home: NextPage = () => {
   const router = useRouter();
   const { q } = router.query;
-  console.log({ q });
 
   return (
     <Layout>

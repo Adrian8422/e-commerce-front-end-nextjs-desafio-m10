@@ -34,7 +34,6 @@ export function useSearchProdQuery(
 }
 
 export function useGetItem(itemId: any) {
-  console.log("itemid en hook", itemId.itemId);
   const { data } = useSWR("/products/" + itemId.itemId, fetchAPI);
   return data;
 }
@@ -57,7 +56,7 @@ export function useCurrentUserState() {
 
 export function useGetCurrentCart() {
   const { data } = useSWR("/users/cart", fetchAPI, { refreshInterval: 1000 });
-  console.log("data del carrito", data);
+
   if (data?.error == true) {
     return [];
   }
@@ -70,7 +69,7 @@ export function useGetCurrentCart() {
   );
   if (booleanExpired == true) {
     deleteAllProductsCart();
-    console.log("productos vencidos");
+
     return [];
   }
 
@@ -82,7 +81,7 @@ export function useGetProductsDestacados() {
     BASE_URL_LOCAL_API + "/api/products/destacados",
     fetcher
   );
-  console.log("efsfsfds", data);
+
   return data;
 }
 export function useGetCategories() {
@@ -104,7 +103,7 @@ export function useGetProductsFromCategorie(categorie: any) {
 
 export function useGetMyOrders() {
   const { data } = useSWR("/users/order/orders", fetchAPI);
-  console.log({ data });
+
   return data;
 }
 

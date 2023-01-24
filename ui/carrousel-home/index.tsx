@@ -14,8 +14,6 @@ export function CarrouselHome() {
       });
   }, []);
 
-  console.log(pics);
-
   return (
     <Carousel
       cellAlign={"center"}

@@ -14,7 +14,7 @@ export async function fetchAPI(input: RequestInfo, options: any | undefined) {
   }
 
   const res = await fetch(url, newOptions);
-  console.log("response", res);
+
   if (res.status >= 200 && res.status < 300) {
     return res.json();
   } else {
@@ -35,7 +35,6 @@ export async function sendCode(email: string) {
 }
 
 export async function authToken(email: string, code: string) {
-  console.log();
   const data = await fetchAPI("/users/auth/token", {
     method: "POST",
     body: {
@@ -68,13 +67,11 @@ export async function updateDataProfile({ name, cellphone, address }: any) {
       address,
     },
   });
-  console.log("data modificada en api tsx", data);
+
   return data;
 }
 
 export async function payMerchantOrder(id: string, quantity: string) {
-  console.log({ id, quantity });
-
   const data = await fetchAPI("/users/order?productId=" + id, {
     method: "POST",
     body: {
@@ -88,7 +85,7 @@ export async function payMerchantOrderFromCart() {
   const data = await fetchAPI("/users/cart/order", {
     method: "POST",
   });
-  console.log("en cart order", { data });
+
   return data;
 }
 
@@ -105,23 +102,16 @@ export async function updateCheckoutShippingData({
       address,
     },
   });
-  console.log("data modificada en api tsx", data);
   return data;
 }
 
 export async function addProductInCart(idProduct: string, quantity: string) {
-  console.log(
-    "Asi llegan los parametros id quantity a ver",
-    idProduct,
-    quantity
-  );
   const data = await fetchAPI("/users/cart?id=" + idProduct, {
     method: "POST",
     body: {
       quantity: parseInt(quantity),
     },
   });
-  console.log("asi llegan data que retorna", data);
 
   return data;
 }
@@ -130,7 +120,6 @@ export async function removeIdProductCart(idProduct: string) {
   const data = await fetchAPI("/users/cart/delete?idProd=" + idProduct, {
     method: "DELETE",
   });
-  console.log({ data });
 }
 
 export async function deleteAllProductsCart() {
@@ -150,6 +139,6 @@ export async function changeQuantityOneProduct(
       quantity: parseInt(quantity),
     },
   });
-  console.log(data);
+
   return data;
 }

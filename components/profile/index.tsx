@@ -19,7 +19,6 @@ export function ProfileComponent() {
     const name = e.target.name.value;
     const address = e.target.address.value;
     const cellphone = e.target.cellphone.value;
-    console.log({ name, address, cellphone });
 
     await updateDataProfile({ name, cellphone, address });
 
@@ -34,7 +33,7 @@ export function ProfileComponent() {
 
   return (
     <FormProfile onSubmit={handleSubmit}>
-      <Large>{"user: " + email}</Large>
+      <Large>{email}</Large>
       <TextField label="Ingrése su nombre" name="name" defaultValue={name} />
       <TextField
         label="Ingrése su teléfono"

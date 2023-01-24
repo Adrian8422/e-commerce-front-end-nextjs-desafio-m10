@@ -2,7 +2,7 @@ import { useSearchProdQuery } from "lib/hooks";
 import { useRouter } from "next/router";
 import { Card } from "ui/card";
 
-import { ContainerCards, ContainerPage } from "./styled";
+import { ContainerCards, ContainerPage, SeeMore } from "./styled";
 
 export function CompProd({ query, offset, limit }: any) {
   const data = useSearchProdQuery(query, offset, limit);
@@ -10,7 +10,6 @@ export function CompProd({ query, offset, limit }: any) {
   const quantityProducts = data?.results.length;
 
   const handleNextPage = () => {
-    console.log("click");
     const currentOffset: any = router.query.offset;
 
     const newOffset = parseInt(currentOffset) + 10;
@@ -19,7 +18,6 @@ export function CompProd({ query, offset, limit }: any) {
     );
   };
   const handleItem = (e: any) => {
-    console.log(e.target.id);
     const idItem = e.target.id;
     router.push("/item/" + idItem);
   };
@@ -38,9 +36,7 @@ export function CompProd({ query, offset, limit }: any) {
           />
         ))}
         {quantityProducts < 10 ? null : (
-          <h2 style={{ cursor: "pointer" }} onClick={handleNextPage}>
-            see more
-          </h2>
+          <SeeMore onClick={handleNextPage}>ver más</SeeMore>
         )}
       </ContainerCards>
     </ContainerPage>

@@ -23,8 +23,10 @@ export const SubTitle = styled(Title).attrs({
 `;
 export const Large = styled.h3`
   margin: 0;
-  font-size: 20px;
-  color: #363434
+
+  text-align: center;
+  font-size: 18px;
+  color: #312f2f;
   font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif;
 `;
@@ -54,6 +56,3 @@ export const TextFooter = styled.h3`
   font-size: 15px;
   cursor: pointer;
 `;
-// export function H2(props: any) {
-//   return <SubTitle {...props} as="h2" />;
-// }

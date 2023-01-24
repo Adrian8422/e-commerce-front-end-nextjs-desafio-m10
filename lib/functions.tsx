@@ -42,7 +42,6 @@ export async function checkPreviousCartForAddProduct({
       itemId as string,
       repeatProduct.data.quantity + parseInt(quantity)
     );
-    console.log({ repeatProduct });
   } else if (!repeatProduct) {
     const addProduct = await addProductInCart(itemId as string, quantity);
     if (addProduct.out_of_stock_error === true) {

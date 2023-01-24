@@ -9,7 +9,7 @@ export default function AllProducts() {
   const { q } = router.query;
   const { offset } = router.query;
   const { limit } = router.query;
-  console.log(router.query);
+
   useSetPreviousPage(
     "/search?q=" + q + "&offset=" + offset + "&limit=" + limit
   );

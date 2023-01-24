@@ -24,3 +24,11 @@ export const ContainerPage = styled.div`
     justify-content: space-evenly;
   }
 `;
+
+export const SeeMore = styled.h2`
+  cursor: pointer;
+  &:hover {
+    transition: all 0.5s;
+    color: #3483fa;
+  }
+`;
