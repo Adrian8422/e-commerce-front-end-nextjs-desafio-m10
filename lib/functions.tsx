@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { addProductInCart, changeQuantityOneProduct } from "./api";
-
+import isAfter from "date-fns/isAfter";
 export function checkStockProd({ dataItem, quantity }: any) {
   if (dataItem.stock == 0) {
     Swal.fire({
@@ -67,4 +67,9 @@ export async function checkPreviousCartForAddProduct({
       });
     }
   }
+}
+
+export function verifyExpiresCart(createdAt: any) {
+  const now = new Date();
+  return isAfter(now, createdAt);
 }

@@ -1,6 +1,7 @@
 import { updateDataProfile } from "lib/api";
 import { useCurrentUserState, useGetDataProfile } from "lib/hooks";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 import { ButtonGeneral } from "ui/button";
 import { FormProfile } from "ui/card/styled";
 import { TextField } from "ui/textfield";
@@ -21,6 +22,14 @@ export function ProfileComponent() {
     console.log({ name, address, cellphone });
 
     await updateDataProfile({ name, cellphone, address });
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Modificaste tus datos",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   return (

@@ -1,7 +1,8 @@
 import useSWR from "swr";
-import { fetchAPI, getSavedToken } from "./api";
+import { deleteAllProductsCart, fetchAPI, getSavedToken } from "./api";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { verifyExpiresCart } from "./functions";
 
 const BASE_URL_LOCAL_API =
   "https://e-commerce-front-end-nextjs-desafio-m10.vercel.app";
@@ -60,6 +61,19 @@ export function useGetCurrentCart() {
   if (data?.error == true) {
     return [];
   }
+
+  const gerDataForCheckExpired = data?.map((item: any) =>
+    verifyExpiresCart(item.data.expires._seconds * 1000)
+  );
+  const booleanExpired = gerDataForCheckExpired?.find(
+    (prod: any) => prod == true
+  );
+  if (booleanExpired == true) {
+    deleteAllProductsCart();
+    console.log("productos vencidos");
+    return [];
+  }
+
   return data;
 }
 
