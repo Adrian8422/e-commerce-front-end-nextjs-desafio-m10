@@ -7,8 +7,6 @@ import { verifyExpiresCart } from "./functions";
 const BASE_URL_LOCAL_API =
   "https://e-commerce-front-end-nextjs-desafio-m10.vercel.app";
 
-const token: any = getSavedToken();
-
 const fetcher = (a: any, b: any) => fetch(a, b).then((res) => res.json());
 
 export function useSearchResults(query: string) {
@@ -17,6 +15,7 @@ export function useSearchResults(query: string) {
 }
 
 export function useGetDataProfile() {
+  const token: any = getSavedToken();
   const { data } = useSWR(
     () => (token.message ? "/users/me" : null),
     fetchAPI,
@@ -65,6 +64,8 @@ export function useCurrentUserState() {
 }
 
 export function useGetCurrentCart() {
+  const token: any = getSavedToken();
+
   const { data } = useSWR(
     token && token.message ? "/users/cart" : null,
     fetchAPI,
@@ -118,6 +119,7 @@ export function useGetProductsFromCategorie(categorie: any) {
 }
 
 export function useGetMyOrders() {
+  const token: any = getSavedToken();
   const { data } = useSWR(
     token.message ? "/users/order/orders" : null,
     fetchAPI
