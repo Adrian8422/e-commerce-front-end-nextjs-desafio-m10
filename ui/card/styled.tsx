@@ -39,7 +39,7 @@ export const ContainerFullCard = styled.div`
   background-color: white;
   width: 231px;
   justify-content: space-evenly;
-  height: ;
+
   text-align: center;
   margin-bottom: 40px;
   @media (min-width: 660px) {

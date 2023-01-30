@@ -4,7 +4,6 @@ export const ContainerComp = styled.div`
   flex-direction: row;
   align-items: center;
 
-  cursor: pointer;
   width: 240px;
   border-radius: 4px;
   box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);

@@ -1,11 +1,11 @@
 const BASE_URL = "https://e-commerce-backend-desafio-m9.vercel.app/api";
 export async function fetchAPI(input: RequestInfo, options: any | undefined) {
   const url = BASE_URL + input;
-  const token = getSavedToken();
+  const token: any = getSavedToken();
   const newOptions: any = options || {};
   newOptions.headers ||= {};
   if (token) {
-    newOptions.headers.authorization = `Bearer ${token}`;
+    newOptions.headers.authorization = `Bearer ${token.message}`;
   }
   newOptions.headers["content-type"] = "application/json";
 
@@ -50,11 +50,22 @@ export function savedToken(token: any) {
   return localStorage.setItem("auth_token", token);
 }
 
+export function logout() {
+  return localStorage.removeItem("auth_token");
+}
+
 export function getSavedToken() {
   try {
-    return localStorage.getItem("auth_token");
-  } catch (error) {
-    return false;
+    if (localStorage.getItem("auth_token")) {
+      return {
+        message: localStorage.getItem("auth_token"),
+        status: true,
+      };
+    } else {
+      return false;
+    }
+  } catch (e) {
+    return e;
   }
 }
 

@@ -5,10 +5,10 @@ export const Root = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  height: 1300px;
+  height: auto;
   justify-content: space-around;
   @media (min-width: 450px) {
-    height: 1500px;
+    height: auto;
   }
   @media (min-width: 730px) {
     height: 800px;

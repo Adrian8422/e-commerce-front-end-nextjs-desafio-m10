@@ -18,8 +18,8 @@ export const ContainerFull = styled.div`
 `;
 
 export const ContainerImage = styled.div`
-  width: 265px;
-  height: 261px;
+  width: 300px;
+  height: 300px;
   border-bottom: solid 1px #4c48483d;
 `;
 

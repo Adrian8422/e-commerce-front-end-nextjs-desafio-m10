@@ -1,3 +1,4 @@
+import { logout } from "lib/api";
 import { useGetValuePreviousPage } from "lib/atoms";
 import { useCurrentUserState } from "lib/hooks";
 import { useRouter } from "next/router";
@@ -18,7 +19,7 @@ export function FooterComponent() {
         confirmButtonText: "Ok",
       });
     } else if (stateUser == true) {
-      localStorage.removeItem("auth_token");
+      logout();
       router.push("/signin");
       Swal.fire({
         title: "Te deslogueaste",

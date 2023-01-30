@@ -67,7 +67,7 @@ export function ItemProduct(itemId: any) {
   return (
     <ContainerPage>
       <ContainerFull style={{ display: "flex" }}>
-        <ContainerImage style={{ width: "300px", height: "300px" }}>
+        <ContainerImage>
           <Image src={imageItem?.url} alt="foto de tv" />
         </ContainerImage>
         <ContainerTitleDescription
