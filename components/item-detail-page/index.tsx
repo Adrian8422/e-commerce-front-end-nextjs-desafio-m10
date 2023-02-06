@@ -32,15 +32,15 @@ export function ItemProduct(itemId: any) {
         confirmButtonText: "Loguearme",
       });
       router.push("/signin");
-    }
-    const checkStateStock = await checkStockProd({
-      dataItem,
-      quantity,
-    });
-
-    if (!checkStateStock?.error == true) {
-      const { itemId } = router.query;
-      router.push("/checkout/" + itemId);
+    } else {
+      const checkStateStock = await checkStockProd({
+        dataItem,
+        quantity,
+      });
+      if (!checkStateStock?.error == true) {
+        const { itemId } = router.query;
+        router.push("/checkout/" + itemId);
+      }
     }
   };
 
