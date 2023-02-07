@@ -10,7 +10,9 @@ export function HomePage({ query }: any) {
         <CarrouselHome />
       </div>
       <MethodsOfPayment />
-      <h3 style={{ margin: "0" }}>Productos con envíos gratis</h3>
+      <h3 style={{ margin: "0", padding: "38px" }}>
+        Productos con envíos gratis
+      </h3>
       <ProductsDestacados />
     </Root>
   );
