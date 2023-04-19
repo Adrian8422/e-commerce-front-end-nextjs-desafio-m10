@@ -21,7 +21,7 @@ export function ProductsDestacados() {
           id={prod.objectID}
           title={prod.title}
           price={prod.price}
-          image={prod.images.find((img: any) => img.width < 130)}
+          image={prod.images[0].thumbnails.small}
         />
       ))}
     </ContainerCards>
