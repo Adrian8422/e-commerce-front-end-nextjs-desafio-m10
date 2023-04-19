@@ -93,3 +93,9 @@ export const ContainerTitles = styled.div`
     padding: 17px;
   }
 `;
+
+export const ImageCard = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;

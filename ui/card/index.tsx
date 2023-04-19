@@ -6,6 +6,7 @@ import {
   ContainerCardDestacados,
   ContainerImage,
   ContainerTitles,
+  ImageCard,
 } from "./styled";
 
 export function Card({ title, price, color, image, event, id }: any) {
@@ -34,7 +35,7 @@ export function CardProductDestacado({ title, price, event, id, image }: any) {
   return (
     <ContainerCardDestacados id={id} onClick={event}>
       <ContainerImage id={id}>
-        <img id={id} src={image?.url} alt="imagen" />
+        <ImageCard id={id} src={image?.url} alt="imagen" />
       </ContainerImage>
       <div id={id}>
         <h4 id={id}>{title}</h4>
